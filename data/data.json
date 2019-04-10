@@ -1,0 +1,88 @@
+{
+  "Textures": [
+    {
+      "blockName": "Air",
+      "drawMode": "none",
+      "colors": {
+        "fillColor": "",
+        "fillAlpha": "",
+        "strokeColor": "",
+        "strokeAlpha": ""
+      },
+      "img": {
+        "source": "",
+        "settings": ""
+      },
+      "svg": {
+        "source": "",
+        "settings": ""
+      },
+      "properties": {
+        "movForce": 1
+      }
+    },
+    {
+      "blockName": "Dirt",
+      "drawMode": "colorFill",
+      "colors": {
+        "fillColor": "#320E00",
+        "fillAlpha": 255,
+        "strokeColor": "#531E0B",
+        "strokeAlpha": 100
+      },
+      "img": {
+        "source": "",
+        "settings": ""
+      },
+      "svg": {
+        "source": "",
+        "settings": ""
+      },
+      "properties": {
+        "movForce": 1
+      }
+    },
+    {
+      "blockName": "Grass",
+      "drawMode": "colorFill",
+      "colors": {
+        "fillColor": "#50AA50",
+        "fillAlpha": 255,
+        "strokeColor": "#00AA00",
+        "strokeAlpha": 100
+      },
+      "img": {
+        "source": "",
+        "settings": ""
+      },
+      "svg": {
+        "source": "",
+        "settings": ""
+      },
+      "properties": {
+        "movForce": 1
+      }
+    },
+    {
+      "blockName": "Stone",
+      "drawMode": "colorFill",
+      "colors": {
+        "fillColor": "#666666",
+        "fillAlpha": 255,
+        "strokeColor": "#828282",
+        "strokeAlpha": 100
+      },
+      "img": {
+        "source": "",
+        "settings": ""
+      },
+      "svg": {
+        "source": "",
+        "settings": ""
+      },
+      "properties": {
+        "movForce": 1
+      }
+    }
+  ]
+}
