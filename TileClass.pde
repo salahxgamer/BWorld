@@ -49,4 +49,7 @@ class BLOCK {
     img_src = img_src_;
     svg_src = svg_src_;
   }
+  String toString() {
+    return blockName;
+  }
 }

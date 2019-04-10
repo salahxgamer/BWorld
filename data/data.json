@@ -26,9 +26,9 @@
       "drawMode": "colorFill",
       "colors": {
         "fillColor": "#320E00",
-        "fillAlpha": 255,
+        "fillAlpha": "255",
         "strokeColor": "#531E0B",
-        "strokeAlpha": 100
+        "strokeAlpha": "100"
       },
       "img": {
         "source": "",
@@ -47,9 +47,9 @@
       "drawMode": "colorFill",
       "colors": {
         "fillColor": "#50AA50",
-        "fillAlpha": 255,
+        "fillAlpha": "255",
         "strokeColor": "#00AA00",
-        "strokeAlpha": 100
+        "strokeAlpha": "100"
       },
       "img": {
         "source": "",
@@ -68,9 +68,9 @@
       "drawMode": "colorFill",
       "colors": {
         "fillColor": "#666666",
-        "fillAlpha": 255,
+        "fillAlpha": "255",
         "strokeColor": "#828282",
-        "strokeAlpha": 100
+        "strokeAlpha": "100"
       },
       "img": {
         "source": "",

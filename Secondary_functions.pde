@@ -53,13 +53,18 @@ void loadTextures() {
     JSONObject currBlock =  TEXTURESData.getJSONObject(i);
     String blockName = currBlock.getString("blockName");
     String drawMode = currBlock.getString("drawMode");
+    
     JSONObject colors = currBlock.getJSONObject("colors");
+    println(colors);
+    println(i);
     String fillColor = colors.getString("fillColor");
     String fillAlpha = colors.getString("fillAlpha");
     String strokeColor = colors.getString("strokeColor");
     String strokeAlpha = colors.getString("strokeAlpha");
+    
     JSONObject img = currBlock.getJSONObject("img");
     String img_src = img.getString("Source");
+    
     JSONObject svg = currBlock.getJSONObject("svg");
     String svg_src = svg.getString("Source");
 
