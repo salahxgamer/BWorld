@@ -1,6 +1,6 @@
 
 
-int resolution = 20;
+int resolution = 10;
 float SCALE = 1;
 BLOCK[] blocks;
 
@@ -14,11 +14,12 @@ void setup() {
   size(800, 800);
   loadTextures();
   engine = new ENGINE(resolution);
-  //frameRate(5);
 }
 
 
 void draw() {
   engine.update(SCALE, ViewOffset);
   engine.render();
+
+
 }

@@ -27,9 +27,11 @@ void mouseWheel(MouseEvent event) {
 
 void mousePressed() {
   // saves current view offset and mouse press for later use when mouseDragged
+  engine.world.move(1, 0);
   prvViewOffset = ViewOffset.copy();
   mPress = new PVector(mouseX, mouseY);
 }
+
 
 void mouseDragged() {
   // adjust the view offset to the relative position of mouse from prev position

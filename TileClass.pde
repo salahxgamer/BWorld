@@ -4,6 +4,7 @@ class TILE {
   BLOCK BType;
   int WIDTH;
   int RES;
+  boolean isGlow = false;
 
   TILE(PVector pos_, BLOCK BType_, int RES_) {
     RES = RES_;
@@ -30,6 +31,12 @@ class TILE {
       fill(#880000, 150);
       rect(x, y, WIDTH, WIDTH);
       break;
+    }
+    if (isGlow) {
+      stroke(#ff5555, 200);
+      fill(#ff1010, 100);
+      rect(pos.x, pos.y, WIDTH, WIDTH);
+      isGlow = false;
     }
   }
   void setBlock(BLOCK block_) {
