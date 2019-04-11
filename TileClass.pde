@@ -1,11 +1,11 @@
 class TILE {
   //initializing variables
   PVector pos;
-  String BType;
+  BLOCK BType;
   int WIDTH;
   int RES;
 
-  TILE(PVector pos_, String BType_, int RES_) {
+  TILE(PVector pos_, BLOCK BType_, int RES_) {
     RES = RES_;
     pos = pos_;
     BType = BType_;
@@ -16,18 +16,33 @@ class TILE {
     int y = (int) pos.y;
     //int i = x / RES;      // inGame/map position;
     //int j = y / RES;
-    colorMode(HSB);
-    fill(x * RES % 255, y  * RES % 255, 255);
-    rect(pos.x, pos.y, WIDTH, WIDTH);
+    switch (BType.drawMode) {
+    case "colorFill" :
+      stroke(BType.strokeColor, BType.strokeAlpha);
+      fill(BType.fillColor, BType.fillAlpha);
+      rect(pos.x, pos.y, WIDTH, WIDTH);
+      break;
+    case "none" :  
+      break;
+    default :
+      strokeWeight(0.5);
+      stroke(#FD0A75, 100);
+      fill(#880000, 150);
+      rect(x, y, WIDTH, WIDTH);
+      break;
+    }
+  }
+  void setBlock(BLOCK block_) {
+    BType = block_;
   }
 }
 class BLOCK {
   String blockName;
   String drawMode;
-  String fillColor;
-  String fillAlpha;
-  String strokeColor;
-  String strokeAlpha;
+  int fillColor;
+  int fillAlpha;
+  int strokeColor;
+  int strokeAlpha;
   String img_src;
   String svg_src;
   BLOCK(
@@ -42,10 +57,10 @@ class BLOCK {
 
     blockName = blockName_;
     drawMode = drawMode_;
-    fillColor = fillColor_;
-    fillAlpha = fillAlpha_;
-    strokeColor = strokeColor_;
-    strokeAlpha = strokeAlpha_;
+    fillColor = strToColor(fillColor_);
+    fillAlpha = int(fillAlpha_);
+    strokeColor = strToColor(strokeColor_);
+    strokeAlpha = int(strokeAlpha_);
     img_src = img_src_;
     svg_src = svg_src_;
   }

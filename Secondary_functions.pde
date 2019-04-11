@@ -3,17 +3,19 @@ PVector prvViewOffset = new PVector();
 PVector ViewOffset = new PVector();
 
 
-PVector vec(int x, int y) { //fast way of creating a vector;
+PVector vec(float x, float y) { //fast way of creating a vector;
   return new PVector(x, y);
 }
 
 
-PVector getRV(int x, int y, int RES) { // get real vector from a scaled cordinations
+PVector getRV(float x, float y, float RES) { // get real vector from a scaled cordinations
   return vec(x*RES, y*RES);
 }
 
-PVector getSV(int x, int y, int RES) { // get Scaled vector from a real cordinations
-  return vec(x/RES, y/RES);
+PVector getSV(float x, float y, int RES) { // get Scaled vector from a real cordinations
+  x = (int) x/RES;
+  y = (int) y/RES;
+  return vec(x, y);
 }
 
 void mouseWheel(MouseEvent event) { 
@@ -33,7 +35,6 @@ void mouseDragged() {
   // adjust the view offset to the relative position of mouse from prev position
   ViewOffset.x = prvViewOffset.x + mouseX - mPress.x; 
   ViewOffset.y = prvViewOffset.y + mouseY - mPress.y;
-  println(mouseX, mouseY);
   line(mPress.x, mPress.y, mouseX, mouseY);
 }
 
@@ -53,22 +54,28 @@ void loadTextures() {
     JSONObject currBlock =  TEXTURESData.getJSONObject(i);
     String blockName = currBlock.getString("blockName");
     String drawMode = currBlock.getString("drawMode");
-    
+
     JSONObject colors = currBlock.getJSONObject("colors");
-    println(colors);
-    println(i);
     String fillColor = colors.getString("fillColor");
     String fillAlpha = colors.getString("fillAlpha");
     String strokeColor = colors.getString("strokeColor");
     String strokeAlpha = colors.getString("strokeAlpha");
-    
+
     JSONObject img = currBlock.getJSONObject("img");
     String img_src = img.getString("Source");
-    
+
     JSONObject svg = currBlock.getJSONObject("svg");
     String svg_src = svg.getString("Source");
 
     blocks[i] = new BLOCK(blockName, drawMode, fillColor, fillAlpha, strokeColor, strokeAlpha, img_src, svg_src);
-    printArray(blocks[i]);
   }
+}
+
+// converts a strin like "#AABBCC" into a color by replaceing # with FF , it would be then "FFAABBCC" and unhexes it
+color strToColor(String str) {
+  if (str.length() > 6) {
+    str = "FF" + (str + "000000").substring(1, 7);
+    return unhex(str);
+  }
+  return #000000;
 }
